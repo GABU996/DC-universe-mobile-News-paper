@@ -5,7 +5,7 @@ import Swipeable from "react-native-gesture-handler/Swipeable";
 const SecondNews = () => {
   const rightSwipe = () => {
     return (
-      <View style={{ top: 30 }}>
+      <View style={{ top: 30, width: "100%" }}>
         <Text style={styles.info}>
           He takes the full force of the bomb, but the sun revives him and he
           returns to the fight. Superman picks up Batman's Kryptonite spear, and
@@ -27,7 +27,7 @@ const SecondNews = () => {
     );
   };
   return (
-    <Swipeable renderRightActions={rightSwipe}>
+    <Swipeable renderRightActions={rightSwipe} renderLeftActions={rightSwipe}>
       <View style={styles.container}>
         <View style={styles.contexi}>
           <Text style={styles.headText}>SUPER-MAN IS DEAD!</Text>
@@ -45,7 +45,7 @@ const SecondNews = () => {
 export default SecondNews;
 
 const styles = StyleSheet.create({
-  container: { height: 270, top: 30 },
+  container: { height: 270, top: 30, backgroundColor: "#F3DFC1" },
   contexi: {},
   ImageStke: {
     height: 120,

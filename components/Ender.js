@@ -1,37 +1,32 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { backgroundColor } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
-const Hirins = () => {
+const Ender = () => {
   return (
-    <View style={{ top: 30, height: 240 }}>
+    <View>
       <Text
         style={{
-          fontSize: 35,
-          fontWeight: "900",
           textAlign: "center",
+          top: 40,
           color: "#3B3C37",
-          backgroundColor: "#9e3641",
-          borderWidth: 3,
-          borderColor: "#3B3C37",
-          height: 120,
-          top: 30,
-          paddingTop: 40,
+          fontWeight: "800",
         }}
       >
-        WE ARE HIRING!
+        ADDITIONAL INFO
       </Text>
       <View
         style={{
           height: 2,
           width: "100%",
           backgroundColor: "#3B3C37",
-          top: 50,
+          top: 40,
         }}
       ></View>
     </View>
   );
 };
 
-export default Hirins;
+export default Ender;
 
 const styles = StyleSheet.create({});

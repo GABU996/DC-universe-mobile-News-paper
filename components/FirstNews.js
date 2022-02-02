@@ -1,19 +1,14 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View, Animated } from "react-native";
 import React from "react";
 import Swipeable from "react-native-gesture-handler/Swipeable";
 
 const FirstNews = () => {
-  const leftSwipe = () => {
+  const leftSwipe = (dragX) => {
     return (
-      <View
-        style={{
-          width: "100%",
-        }}
-      >
+      <View style={{ width: "100%" }}>
         <View
           style={{
             top: 30,
-            maxWidth: "100%",
 
             alignItems: "center",
           }}
@@ -25,6 +20,7 @@ const FirstNews = () => {
               borderWidth: 3,
               borderColor: "#3B3C37",
               top: 30,
+              width: "100%",
             }}
           >
             <Image
@@ -70,7 +66,15 @@ const FirstNews = () => {
   };
 
   return (
-    <Swipeable renderRightActions={leftSwipe}>
+    <Swipeable
+      containerStyle={{ flex: 1 }}
+      rightThreshold={80}
+      friction={2}
+      renderRightActions={leftSwipe}
+      overshootRight
+      renderLeftActions={leftSwipe}
+      leftThreshold={80}
+    >
       <View style={{ height: 450 }}>
         <View style={styles.container}>
           <View style={styles.NewsTextContainer}>
@@ -110,6 +114,7 @@ const styles = StyleSheet.create({
     top: 30,
     justifyContent: "space-between",
     width: "100%",
+    backgroundColor: "#F3DFC1",
   },
   NewsTextContainer: {
     width: 200,

@@ -5,7 +5,7 @@ import Swipeable from "react-native-gesture-handler/Swipeable";
 const ThirdNews = () => {
   const Right = () => {
     return (
-      <View style={{ top: 50 }}>
+      <View style={{ top: 50, width: "100%" }}>
         <Text
           style={{
             top: 15,
@@ -35,7 +35,7 @@ const ThirdNews = () => {
     );
   };
   return (
-    <Swipeable renderRightActions={Right}>
+    <Swipeable renderRightActions={Right} renderLeftActions={Right}>
       <View style={styles.container}>
         <Image
           style={styles.ImageStyle}
@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     top: 50,
     height: 350,
+    backgroundColor: "#F3DFC1",
   },
   secondCont: { flexDirection: "column" },
   ImageStyle: {
